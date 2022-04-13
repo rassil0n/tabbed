@@ -2,18 +2,25 @@
 
 /* appearance */
 static const char font[]        = "monospace:size=9";
+/* static const char* normbgcolor  = "#2e3440"; */
+/* static const char* normfgcolor  = "#eceff4"; */
+/* static const char* selbgcolor   = "#2e3440"; */
+/* static const char* selfgcolor   = "#5e81ac"; */
+
 static const char* normbgcolor  = "#2e3440";
 static const char* normfgcolor  = "#eceff4";
-static const char* selbgcolor   = "#2e3440";
-static const char* selfgcolor   = "#5e81ac";
+static const char* selbgcolor   = "#5e81ac";
+static const char* selfgcolor   = "#eceff4";
 static const char* urgbgcolor   = "#2e3440";
 static const char* urgfgcolor   = "#bf616a";
+
 static const char before[]      = "<";
 static const char after[]       = ">";
 static const char titletrim[]   = "...";
 static const int  tabwidth      = 200;
 static const Bool foreground    = True;
 static       Bool urgentswitch  = False;
+static const int barHeight	= 32;
 
 /*
  * Where to place a new tab when it is opened. When npisrelative is True,
@@ -39,10 +46,10 @@ static Key keys[] = {
 	/* { MODKEY|ShiftMask,     XK_Return, focusonce,   { 0 } }, */
 	{ MODKEY|ShiftMask,     XK_Return, spawn,       { 0 } },
 
-	{ MODKEY|ShiftMask,     XK_l,      rotate,      { .i = +1 } },
-	{ MODKEY|ShiftMask,     XK_h,      rotate,      { .i = -1 } },
-	{ MODKEY|ShiftMask,     XK_j,      movetab,     { .i = -1 } },
-	{ MODKEY|ShiftMask,     XK_k,      movetab,     { .i = +1 } },
+	{ MODKEY|ShiftMask,     XK_j,      rotate,      { .i = +1 } },
+	{ MODKEY|ShiftMask,     XK_k,      rotate,      { .i = -1 } },
+	{ MODKEY|ShiftMask,     XK_h,      movetab,     { .i = -1 } },
+	{ MODKEY|ShiftMask,     XK_l,      movetab,     { .i = +1 } },
 	{ MODKEY,               XK_Tab,    rotate,      { .i = 0 } },
 
 	{ MODKEY,               XK_grave,  spawn,       SETPROP("_TABBED_SELECT_TAB") },
